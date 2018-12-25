@@ -19,7 +19,6 @@ class NewSpider(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse_new)
             
     def parse_new(self, response):
-        print('j')
         news=response.css('div.row a.v-serp-block-link::attr("href")').extract_first()
         for new in news:
             newu =response.urljoin(new)
