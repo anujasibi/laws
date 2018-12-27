@@ -70,9 +70,12 @@ CONCURRENT_REQUESTS = 32000
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'law.middlewares.LawDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'law.middlewares.LawDownloaderMiddleware': 543
+    'rotating_proxies.middlewares.RotatingProxyMiddleware': 610,
+    'rotating_proxies.middlewares.BanDetectionMiddleware': 620,
+    
+}
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
