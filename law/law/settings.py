@@ -18,6 +18,22 @@ NEWSPIDER_MODULE = 'law.spiders'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'law(+http://www.avvo.com)'
 USER_AGENT="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+ROTATING_PROXY_LIST=[
+'5.58.152.191:42600'
+'46.39.252.123:61165'
+'188.231.142.71:59334'
+'206.81.0.100:8080'
+'82.76.164.208:58981'
+'91.135.22.235:49317'
+'109.199.133.161:23500'
+'201.140.113.90:37193'
+'185.199.84.161:53281'
+'84.247.236.102:35988'
+'200.52.144.77:8080'
+'96.87.184.101:37134'
+
+
+    ]
 
 
 # Obey robots.txt rules
