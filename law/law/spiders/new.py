@@ -39,7 +39,7 @@ class NewSpider(scrapy.Spider):
             yield scrapy.Request(url=next_page_url, callback=self.parse_lawyers)
 
     def parse_details(self, response):
-        
+        #Extracting all the details
             yield{
                 'name':response.css('title::text').extract_first(),
                 'about':response.css('div.card p::text').extract(),
@@ -52,6 +52,9 @@ class NewSpider(scrapy.Spider):
                 'payment_types':response.css('.row .col-xs-12 .card h2.u-margin-top-0::text')[-1].extract(),
                 'practice area':response.css('.row li.js-specialty a::attr("href")').extract(),
                 'geo_details_link': response.css('.row a.js-v-google-map-link::attr("href")').extract(),
+#Extract the latitude and longitude
+                'latitude':response.css('.row a.js-v-google-map-link::attr("href")\@(-?[\d\.]*)').extract()
+                'longitude':response.css('.row a.js-v-google-map-link::attr("href")\@[-?\d\.]*\,([-?\d\.]*)').extract()
 
                 
               
