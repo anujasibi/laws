@@ -53,7 +53,7 @@ class NewSpider(scrapy.Spider):
                 'practice area':response.css('.row li.js-specialty a::attr("href")').extract(),
                 'geo_details_link': response.css('.row a.js-v-google-map-link::attr("href")').extract(),
 #Extract the latitude and longitude
-                'latitude':response.css('.row a.js-v-google-map-link::attr("href")\@(-?[\d\.]*)').extract()
+                'latitude':response.css('.row a.js-v-google-map-link::attr("href")\@(-?[\d\.]*)').extract(),
                 'longitude':response.css('.row a.js-v-google-map-link::attr("href")\@[-?\d\.]*\,([-?\d\.]*)').extract()
 
                 
