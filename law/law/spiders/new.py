@@ -46,7 +46,14 @@ class NewSpider(scrapy.Spider):
                 'license':response.css('li time::text').extract(),
                 'avvo_rating':response.css('.row span.h3::text').extract(),
                 'client_rating':response.css('.row span.small::text').extract(),
-                'image':response.css('.row img::attr(src)').extract_first()
+                'image':response.css('.row img::attr(src)').extract_first(),
+                'phone':response.css('.row span.js-v-phone-replace a::attr("href")').extract_first(),
+                'address':response.css('.row .v-lawyer-address span::text').extract(),
+                'payment_types':response.css('.row .col-xs-12 .card h2.u-margin-top-0::text')[-1].extract(),
+                'practice area':response.css('.row li.js-specialty a::attr("href")').extract(),
+                'geo_details_link': response.css('.row a.js-v-google-map-link::attr("href")').extract(),
+
+                
               
          }
            
